@@ -27,7 +27,7 @@ function displayMot(listeLettre) {
     let motAffiche = '';
     for (let i = 0; i < tableauLettres.length; i++) {
         if (listeLettre.indexOf(tableauLettres[i]) === -1) {
-            motAffiche += "*";
+            motAffiche += "_";
         } else {
             motAffiche += tableauLettres[i];
         }
