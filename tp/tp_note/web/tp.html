@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot nettoyeur</title>
+    <style>
+        .grille {
+            display: grid;
+            grid-template-columns: repeat(7, 50px);  /* Crée une grille de 7 colonnes */
+            grid-gap: 5px;
+            border: 1px solid orange;
+            width:fit-content;
+        }
+        .cellule {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid black;
+            font-size: 20px;
+        }
+        .nettoyee {
+            background-color: lightgreen;  /* Marquer les cases nettoyées */
+        }
+        .robot {
+            background-color: lightblue;  /* Marquer la position du robot */
+        }
+        .start-button{
+            position: relative;
+            left: 15%;
+            border-radius: 25px;
+            padding:10px;
+            border: none;
+       }
+       .start-button:hover{
+            transition: all 1s;
+            border: 1px solid rgba(97, 97, 97, 0.356)
+        }
+    </style>
+</head>
+<body>
+    <script type="module" src="js.js"></script>
+    <button class="start-button" id="demarrer-nettoyage">
+        démmarage ?
+    </button>
+    <center>
+        <div class="grille" id="grille-container"></div>
+    </center>
+</body>
+</html>
