@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+
+        <canvas style="border: 2px solid black" id="drawingCanvas" width="300" height="300">
+            Bug: Canvas not supported
+        </canvas>
+    </center>
+
+    <script>
+        const canvas = document.getElementById("drawingCanvas");
+        const context = canvas.getContext("2d");
+
+        // Initialize tool and memory canvas
+        let tool = {
+            started: false,
+            points: []
+        };
+
+        let memCanvas = document.createElement("canvas");
+        let memContext = memCanvas.getContext("2d");
+
+        memCanvas.width = canvas.width;
+        memCanvas.height = canvas.height;
+
+        canvas.addEventListener("mousedown", function (ev) {
+            tool.started = true;
+            tool.points = [];
+            tool.points.push({
+                x: ev.offsetX,
+                y: ev.offsetY
+            });
+        });
+
+        // Function to handle mouse move (drawing)
+        canvas.addEventListener("mousemove", function (ev) {
+            if (tool.started) {
+                context.clearRect(0, 0, canvas.width, canvas.height); 
+                context.drawImage(memCanvas, 0, 0); 
+                tool.points.push({
+                    x: ev.offsetX,
+                    y: ev.offsetY
+                });
+                drawPoints(context, tool.points); 
+            }
+        });
+
+        canvas.addEventListener("mouseup", function () {
+            tool.started = false;
+            memContext.clearRect(0, 0, canvas.width, canvas.height); 
+            memContext.drawImage(canvas, 0, 0); 
+        });
+
+        function drawPoints(context, points) {
+            if (points.length < 2) return;
+            context.beginPath();
+            context.moveTo(points[0].x, points[0].y);
+            for (let i = 1; i < points.length; i++) {
+                context.lineTo(points[i].x, points[i].y);
+            }
+            context.stroke();
+        }
+    </script>
+
+</body>
+</html>

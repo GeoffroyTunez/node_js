@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="add()">
+        Ajouter
+    </button>
+    <button onclick="reset()">
+        Rest
+    </button>
+
+    <div id="compteur">
+        0
+    </div>
+
+    <script>
+        const compteur = document.getElementById("compteur")
+
+        function add(){
+            const valeur = parseInt(compteur.innerHTML) +1
+            compteur.innerHTML = valeur
+        }
+        function reset(){
+            compteur.innerHTML = 0
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="text-input">
+    <button id="add-input" onclick="handle()"> Ajouter </button>
+    <ul id="list">
+        
+    </ul>
+
+
+    <script>
+        const textInput = document.getElementById("text-input")
+        const list = document.getElementById("list")
+
+        function handle(){
+            const text = textInput.value
+            const li = document.createElement(`li`)
+            li.textContent = text
+            list.appendChild(li)
+            textInput.value = ""
+        }
+    </script>
+
+</body>
+</html>

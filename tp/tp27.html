@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="show" onclick="hide()">
+        Afficher
+    </button>
+
+    <button id="hide" style="display: none" onclick="show()">
+        Cacher
+    </button>
+
+    <p id="paragraphe">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore laudantium fugit, molestiae dicta inventore
+        doloribus suscipit qui, illum odit officia cum magni voluptatum totam quasi magnam iure eos et! Quasi.
+
+    </p>
+
+    <script>
+        const showButton = document.getElementById("show")
+        const hideButton = document.getElementById("hide")
+
+        const paragraphe = document.getElementById("paragraphe")
+        function show() {
+            paragraphe.style.display = "block"
+            showButton.style.display = "block"
+            hideButton.style.display = "none"
+        }
+
+        function hide() {
+            paragraphe.style.display = "none"
+            showButton.style.display = "none"
+            hideButton.style.display = "block"
+        }
+    </script>
+</body>
+
+</html>

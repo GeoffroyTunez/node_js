@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="red" onclick="handclick('red')">red</button>
+    <button id="blue" onclick="handclick('blue')">blue</button>
+    <button id="white" onclick="handclick('white')">white</button>
+
+<script>
+    const bouton1 = document.getElementById("red")
+    const bouton2 = document.getElementById("blue")
+    const bouton3 = document.getElementById("white")
+
+    const body = document.querySelector("body")
+    function handclick(couleur){
+        body.style.background = couleur
+    }
+</script>
+
+</body>
+</html>

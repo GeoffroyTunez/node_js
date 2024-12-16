@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        width: 200px;
+    }
+
+    #big_image {
+        display: none;
+        width: 500px;
+        transition: all 3s;
+        opacity: 0; 
+    }
+
+        
+    #big_image.show {
+        display: block;
+        opacity: 1;
+    }
+</style>
+<body>
+    <img id="big_image" src="">
+
+    <div style="display: flex;" id="galery">
+        <img onclick="show(src)" alt="image 1" id="image_1" src="https://www.keyweo.com/wp-content/uploads/2021/09/google-logo-history.jpg">
+        <img onclick="show(src)" alt="image 2" id="image_2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Googleplex_HQ_%28cropped%29.jpg/1200px-Googleplex_HQ_%28cropped%29.jpg">
+        <img onclick="show(src)" alt="image 3" id="image_3" src="https://images.ctfassets.net/p24lh3qexxeo/17SXO2yhPQUNX2IZ6WtQN2/586c4dab3a11ffeec64d40fea30dd89b/Google_Doodle.png">
+    </div>
+
+
+    <script>
+        const big_image = document.getElementById("big_image")
+        function show(src){
+            big_image.classList.remove("show")
+            setTimeout("",10)
+            big_image.src = src
+            setTimeout(() => {
+                big_image.classList.add("show"); 
+            }, 30);
+        }
+
+    </script>
+</body>
+
+</html>

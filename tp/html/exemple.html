@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        test
+    </h1>
+
+    <span id="titre2">test 2</span>
+
+    <span class="bold">test 3</span>
+
+    <button onclick="handclick('hello')">Hello Web</button>
+    <span id="testlick" style="display:none">Hello user </span>
+
+</body>
+<script>
+    const title = document.querySelector("h1");
+    const title2 = document.getElementById("titre2");
+
+    title2.style.color = "red";
+
+    const title3 = document.querySelector(".bold");
+
+    title3.style.fontWeight = "bold";
+
+    function handclick(message) {
+        const click = document.getElementById("testlick");
+        click.style.display = "block";
+    }
+
+
+</script>
+</html>
